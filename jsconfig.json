@@ -2,15 +2,14 @@
 // It'll help us keep our import statements nice and clean!
 // You can read more about this in the Next.js docs at:
 // https://nextjs.org/docs/advanced-features/module-path-aliases
-
 {
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@components": ["components"],
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"]
     }
   }
 }
-
 
