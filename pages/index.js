@@ -6,6 +6,8 @@ import Image from 'next/image'
 
 import styles from '@styles/index.module.scss';
 import { getPosts } from '@lib/firebase';
+import { Layout } from '@components';
+
 
 const getFormattedDate = (milliseconds) => {
   const formatOptions = {
@@ -20,7 +22,7 @@ const getFormattedDate = (milliseconds) => {
 };
 
 const HomePage = ({posts}) => (
-
+  <Layout>
   <div className={styles.HomePage}>
     <h1>Blog Posts</h1>
     {posts.map((post) => (
@@ -38,9 +40,8 @@ const HomePage = ({posts}) => (
         </div>
       </article>
     ))}
-    
   </div>
-
+  </Layout>
 );
 
 // This is for fetching data every time the page is visited. We do this

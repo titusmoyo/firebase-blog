@@ -7,9 +7,9 @@
     "baseUrl": "./",
     "paths": {
       "@components": ["components"],
+      "@contexts/*": ["contexts/*"],
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"]
     }
   }
 }
-

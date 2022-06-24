@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/router'; // this is new
 import { createPost } from '@lib/firebase'; // this is new
 import styles from '@styles/create.module.scss';
+import { useAuth } from '@contexts/auth';
+
 
 const CreatePage = () => {
   const router = useRouter(); // this is new
@@ -16,7 +18,20 @@ const CreatePage = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false); // this is new
+  const [user, userLoading] = useAuth();
+  console.log(user, userLoading);
+  console.log("user : "+user);
+  console.log("userLoading : "+userLoading);
 
+  if (userLoading) {
+    return null;
+  }
+
+  if (!user && typeof window !== 'undefined') {
+    router.push('/404');
+    return null;
+  }
+  
   /*
   This is the function we're passing to each control so we can capture
   the value in it and store it in our `formValues` variable.
