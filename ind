@@ -2,6 +2,7 @@ npx create-next-app
 ty ... project name
 
 npm install sass firebase
+//npm install firebase@8.9
 
 /*Git*/
 echo "# firebase-blog" >> README.md
