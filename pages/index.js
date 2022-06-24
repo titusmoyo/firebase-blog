@@ -37,8 +37,9 @@ const HomePage = ({posts}) => (
         </div>
       </article>
     ))}
+    
   </div>
-  
+
 );
 
 // This is for fetching data every time the page is visited. We do this
